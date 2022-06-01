@@ -7,15 +7,15 @@ public class PlayerShootingGranade : MonoBehaviour
     [SerializeField] Transform aim;
     [SerializeField] GameObject granadePrefab;
     [Range(3.0f, 20.0f)] public float attack = 3f;
-    [Range(1.0f, 20.0f)] public float bulletSpeed = 5f;
-    [Range(0, 20)]  public int granadeNumber = 1;
+    [Range(1.0f, 20.0f)] public float speed = 5f;
+    [Range(0, 20)]  public int quantity = 1;
     int granadesLeft;
     bool isGranadeActive = false;
     GranadeUI granadeUI;
 
     private void Start()
     {
-        granadesLeft = granadeNumber;
+        granadesLeft = quantity;
         granadeUI = FindObjectOfType<GranadeUI>();
         if(granadeUI != null)
         {
@@ -48,6 +48,6 @@ public class PlayerShootingGranade : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(granadePrefab, aim.position, Quaternion.identity);
-        bullet.GetComponent<PlayerGranade>().InitializeBullet(attack, bulletSpeed);
+        bullet.GetComponent<PlayerGranade>().InitializeBullet(attack, speed);
     }
 }

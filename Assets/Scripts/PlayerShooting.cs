@@ -7,7 +7,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] Transform aim;
     [SerializeField] GameObject bulletPrefab;
     [Range(1.0f, 10.0f)] public float attack = 1f;
-    [Range(5.0f, 40.0f)] public float bulletSpeed = 20f;
+    [Range(5.0f, 40.0f)] public float speed = 20f;
     SpriteRenderer spriteRend;
     Color32 spriteColor;
 
@@ -29,6 +29,6 @@ public class PlayerShooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, aim.position, Quaternion.identity);
         bullet.GetComponentInChildren<SpriteRenderer>().color = spriteColor;
-        bullet.GetComponent<PlayerBullet>().InitializeBullet(attack, bulletSpeed);
+        bullet.GetComponent<PlayerBullet>().InitializeBullet(attack, speed);
     }
 }

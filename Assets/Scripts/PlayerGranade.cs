@@ -35,7 +35,7 @@ public class PlayerGranade : MonoBehaviour
 
     void Explode()
     {
-        rb.velocity = Vector2.zero;
+        speed = 0f;
         bulletSR.enabled = false;
         boomEffectSprite.gameObject.SetActive(true);
         col.enabled = true;
