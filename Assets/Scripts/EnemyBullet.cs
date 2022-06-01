@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer bulletSR;
     float attack, speed;
     Rigidbody2D rb;
 
@@ -29,7 +30,7 @@ public class EnemyBullet : MonoBehaviour
         HealthPoints hp = collision.transform.GetComponent<HealthPoints>();
         if (hp != null)
         {
-            hp.TakeDamage(attack);
+            hp.TakeDamage(attack, bulletSR.color);
         }
         Destroy(gameObject);
     }

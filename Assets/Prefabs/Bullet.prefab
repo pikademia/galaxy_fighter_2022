@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3612223819001578458}
   - component: {fileID: 3612223819001578461}
   - component: {fileID: 3612223819001578459}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3612223819009231396}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3612223819001578461
 Rigidbody2D:
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ff596dfb9c063408c76b47c8ff86ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletSR: {fileID: 3612223819009231394}
 --- !u!1 &3612223819009231399
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ GameObject:
   - component: {fileID: 3612223819009231396}
   - component: {fileID: 3612223819009231394}
   - component: {fileID: 3612223819009231397}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: mainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

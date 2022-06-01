@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer bulletSR;
     float attack, speed;
     Rigidbody2D rb;
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 16f/speed);
+        Destroy(gameObject, 14f/speed);
     }
 
     public void InitializeBullet(float attack, float speed)
@@ -29,7 +29,7 @@ public class PlayerBullet : MonoBehaviour
         HealthPoints hp = collision.transform.GetComponent<HealthPoints>();
         if(hp != null)
         {
-            hp.TakeDamage(attack);   
+            hp.TakeDamage(attack, bulletSR.color);   
         }
         Destroy(gameObject);
     }
