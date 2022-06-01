@@ -6,16 +6,24 @@ public class EnemyMove : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    [Range(0.1f, 2.0f)] public float height = 0.1f;
-    [Range(0f, 15.0f)] public float speed = 0f;
+    [Range(1f, 50f)] public float distance = 20f;
+    [Range(0f, 10f)] public float speed = 1f;
+    float counter = 0f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = Vector2.zero;
     }
 
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.up * speed * (Mathf.Sin(Time.time* (1/height)));
+        if(speed > 0f)
+        {
+            counter += (1f / distance);
+            rb.velocity = new Vector2(0f, Mathf.Sin(counter)) * speed;
+
+        }
+
     }
 }

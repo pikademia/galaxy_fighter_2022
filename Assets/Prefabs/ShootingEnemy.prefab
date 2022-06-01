@@ -4937,6 +4937,7 @@ GameObject:
   - component: {fileID: 2804514139762334652}
   - component: {fileID: 2804514139762334653}
   - component: {fileID: 2804514139762334650}
+  - component: {fileID: 2003277003}
   m_Layer: 0
   m_Name: ShootingEnemy
   m_TagString: Enemy
@@ -4960,7 +4961,7 @@ Transform:
   - {fileID: 2804514139100105236}
   - {fileID: 2804514140405078580}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2804514139762334652
 Rigidbody2D:
@@ -5015,6 +5016,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffectPrefab: {fileID: 1002647622855496289, guid: bb33e92af52f55542afef2b6aeb14b4b, type: 3}
   hP: 10
+--- !u!114 &2003277003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2804514139762334654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73dc9e5de2169094ebe18b44360d31df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  speed: 3.98
 --- !u!1 &2804514140405078583
 GameObject:
   m_ObjectHideFlags: 0
