@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         dirY = Input.GetAxisRaw("Vertical");
-        dir = new Vector3(dirX, dirY, 0f).normalized;
+       // dir = new Vector3(dirX, dirY, 0f).normalized;
+        dir = new Vector3(dirX, dirY, 0f);
 
     }
 

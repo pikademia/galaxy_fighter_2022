@@ -6,6 +6,7 @@ using UnityEngine;
 public class HealthPoints : MonoBehaviour
 {
     [SerializeField] GameObject hitEffectPrefab;
+    [SerializeField] GameObject destroyEffect;
     [Range(0.0f, 50.0f)] public float hP = 10f;
     PlayerUIHealthBar playerHealthBar;
     ParticleSystem hitEffect;
@@ -42,6 +43,10 @@ public class HealthPoints : MonoBehaviour
         if(currentHp < 0)
         {
             SoundManager.Instance.PlayDestroySound();
+            if(destroyEffect != null)
+            {
+                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
 
