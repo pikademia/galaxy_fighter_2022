@@ -7,10 +7,13 @@ public class PlayerGranade : MonoBehaviour
     [SerializeField] SpriteRenderer bulletSR;
     [SerializeField] SpriteRenderer boomEffectSprite;
     [SerializeField] Collider2D col;
+    [SerializeField] AudioClip explosionSound;
     float attack, speed;
     Rigidbody2D rb;
+    AudioSource audios;
     void Start()
     {
+        audios = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -29,6 +32,10 @@ public class PlayerGranade : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
+            if (audios != null && explosionSound != null)
+            {
+                audios.PlayOneShot(explosionSound);
+            }
             Explode();
         }
     }

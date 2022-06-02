@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GeneralUI : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GeneralUI : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("exit");
+        SceneManager.LoadScene(0);
     }
 
 

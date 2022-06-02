@@ -6,15 +6,18 @@ public class PlayerShootingGranade : MonoBehaviour
 {
     [SerializeField] Transform aim;
     [SerializeField] GameObject granadePrefab;
+    [SerializeField] AudioClip granadeShootSound;
     [Range(3.0f, 20.0f)] public float attack = 3f;
     [Range(1.0f, 20.0f)] public float speed = 5f;
     [Range(0, 20)]  public int quantity = 1;
+    AudioSource audios;
     int granadesLeft;
     bool isGranadeActive = false;
     GranadeUI granadeUI;
 
     private void Start()
     {
+        audios = GetComponent<AudioSource>();
         granadesLeft = quantity;
         granadeUI = FindObjectOfType<GranadeUI>();
         if(granadeUI != null)
@@ -30,6 +33,10 @@ public class PlayerShootingGranade : MonoBehaviour
         {
             if(granadesLeft > 0 && isGranadeActive == false)
             {
+                if (audios != null && granadeShootSound != null)
+                {
+                    audios.PlayOneShot(granadeShootSound);
+                }
                 Shoot();
                 isGranadeActive=true;
                 granadesLeft--;

@@ -6,13 +6,16 @@ public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] Transform aim;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] AudioClip shootSound;
     [Range(1.0f, 10.0f)] public float attack = 1f;
     [Range(5.0f, 40.0f)] public float speed = 20f;
     SpriteRenderer spriteRend;
     Color32 spriteColor;
+    AudioSource audios;
 
     void Start()
     {
+        audios = GetComponent<AudioSource>();
         spriteRend = GetComponentInChildren<SpriteRenderer>();
         spriteColor = spriteRend.color;
     }
@@ -22,6 +25,10 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+            if(audios != null && shootSound != null)
+            {
+                audios.PlayOneShot(shootSound);
+            }
         }
     }
 
