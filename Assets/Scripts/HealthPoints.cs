@@ -42,7 +42,10 @@ public class HealthPoints : MonoBehaviour
         }
         if(currentHp < 0)
         {
-            SoundManager.Instance.PlayDestroySound();
+            if (SoundManager.Instance)
+            {
+                SoundManager.Instance.PlayDestroySound();
+            }
             if(destroyEffect != null)
             {
                 Instantiate(destroyEffect, transform.position, Quaternion.identity);

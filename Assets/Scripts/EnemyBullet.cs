@@ -27,10 +27,13 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        HealthPoints hp = collision.transform.GetComponent<HealthPoints>();
-        if (hp != null)
+        if (!collision.transform.CompareTag("Enemy"))
         {
-            hp.TakeDamage(attack, bulletSR.color);
+            HealthPoints hp = collision.transform.GetComponent<HealthPoints>();
+            if (hp != null)
+            {
+                hp.TakeDamage(attack, bulletSR.color);
+            }
         }
         Destroy(gameObject);
     }
