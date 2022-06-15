@@ -12,7 +12,7 @@ public class CanonBase : MonoBehaviour
     [SerializeField] [Range(1,10)] int NoOfBulletsInSeries = 5;
     [SerializeField] [Range(0.2f,1f)] float delayBetweenBullets = 0.3f;
     [SerializeField] [Range(0.5f,5f)] float delayBetweenSeries = 1f;
-    [SerializeField] [Range(1f,10f)] float attack = 1f;
+    [SerializeField] [Range(1,10)] int attack = 1;
 
     void Start()
     {

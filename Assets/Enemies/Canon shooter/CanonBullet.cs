@@ -7,7 +7,7 @@ public class CanonBullet : MonoBehaviour
     Rigidbody2D rb;
     Vector2 vel;
     float moveSpeed;
-    float attack;
+    int attack;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,26 +16,23 @@ public class CanonBullet : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
-    public void Initialize(Vector2 vel_p, float a){
+    public void Initialize(Vector2 vel_p, int a){
         vel = vel_p.normalized;
         attack = a;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.transform.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            HealthPoints hp = collision.transform.parent.GetComponent<HealthPoints>();
+            PlayerHP hp = collision.gameObject.GetComponent<PlayerHP>();
             if (hp != null)
             {
                 hp.TakeDamage(attack, GetComponent<SpriteRenderer>().color);
             }
-
+            Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            return;
-        }
-        Destroy(gameObject);
     }
+
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1056917268641403654}
   - component: {fileID: 740007399}
   - component: {fileID: 740007398}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: StonePrefab
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

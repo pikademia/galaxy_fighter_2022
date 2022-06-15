@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2041861455262575372}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2041861453977027003
 MonoBehaviour:
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75be6ddc0a48fcf40ae46879d2ee50cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  maxRotation: 12.2
+  speed: 4.8
+  maxRotation: 31.3
 --- !u!1 &2041861455262575360
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,4 +183,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a7920a04a35704194261b6a9c1b3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 10
+  attack: 50
